@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./vaht.css">
+</head>
+
+<style>
+    .yashil{
+        background-color: seagreen;
+    }
+</style>
+
+<html>
+<body>
+
+    
+    <div class="container py-5">
+        <div class="d-flex justify-content-between mb-2">
+            <p>Date: <span id="sana"></span></p>
+            <input id="inputId" type="number" placeholder="Minut" onchange="minutKirit(event)">
+        </div>
+        <div id="container" class="bg-danger py-5 text-white text-center rounded shadow">
+            <h1 class="display-1"><span id="min"></span> : <span id="sec"></span></h1>
+            <div class="mt-5">
+                <button class="btn btn-outline-light me-3" onclick="start()" >stert</button>
+                <button class="btn btn-outline-light me-3" onclick="stop()">pausa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        const title = document.getElementsByTagName("title")[0];
+        const min = document.getElementById("min")
+        const sec = document.getElementById("sec")
+        const container = document.getElementById("container")
+
+
+        let m = localStorage.getItem("min");
+        let s = localStorage.getItem("sec");
+        let timer;
+        let saqlovchi = "";
+        let almashtir = (localStorage.getItem("almashtir")) == "true";
+        console.log(almashtir);
+
+        const qoshish = (n) => {
+            if (n < 10) return "0" + n;
+            else return n;
+        }
+
+        
+        const changeUI = () => {
+            // if(inputId.value != ""){
+
+            // }
+            min.innerHTML = qoshish(m);
+                sec.innerHTML = qoshish(s);
+                title.innerHTML = `${qoshish(m)} : ${qoshish(s)} pomodoro`;
+                localStorage.setItem("min", m);
+                localStorage.setItem("sec", s);
+        }
+
+        changeUI();
+
+        // bu qisim pomodoroning qiymatini true yokimfalse ga ozgartirib beradi;
+
+        const qiymatOzgartir = (minOzgar) => {
+                    if(almashtir){
+                       if(minOzgar) m = 5;
+                       container.classList.remove("bg-danger");
+                        container.classList.add("yashil");
+                      
+                    }
+                    else{
+                        if(minOzgar) m = 25;
+                        container.classList.add("bg-danger");
+                        container.classList.remove("yashil");
+                    }
+                    
+        };
+        qiymatOzgartir(false);
+
+        
+
+        const start = () => {
+            if(!saqlovchi){
+                saqlovchi = setInterval(() => {
+                changeUI();
+                if(s == 0){
+                    s = 60;
+                    m--;
+                }
+                s--;
+
+                if(m == -1) {
+                    
+                    almashtir = !almashtir;
+                    localStorage.setItem("almashtir", almashtir);
+                    
+                    qiymatOzgartir(true);
+                }
+
+            },1000)
+        }
+    }
+    const stop = () => {
+            clearInterval(saqlovchi);
+            saqlovchi = undefined;
+        }
+
+
+    const inputId = document.getElementById("inputId");
+    let inputValue;
+   const minutKirit=(e)=>{
+        inputValue = e.target.value;
+        console.log(inputValue);
+        min.innerHTML = qoshish(inputValue);
+        m = min.innerHTML;
+        localStorage.setItem("min", m)
+
+}
+minutKirit();
+
+
+       
+
+    </script>
+
+    <script>
+        let date = new Date();
+        let kun = date.getDate();
+        let oy = date.getMonth()+1;
+        let yil = date.getFullYear();
+        console.log(yil);
+        const sana = document.getElementById("sana");
+        sana.innerHTML = `${oy}.${kun}.${yil}`;
+    </script>
+ -->
+
+ <script src="./vaht.js"></script>
+
+</body>
+</html>
+
